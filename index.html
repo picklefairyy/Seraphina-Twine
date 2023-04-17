@@ -16,7 +16,7 @@ You wake up to the sound of servents bustling through the halls with blankets, d
 It&#39;s cold. 
 
 [[What&#39;s all the commotion?]]
-</tw-passagedata><tw-passagedata pid="2" name="What&#39;s all the commotion?" tags="" position="200,0" size="100,100">Nina hurries back and forth across the room, waking the dust and unused cosmetic pastes from their slumber in the depths of your desk before burying herself in the depths of your closet. 
+</tw-passagedata><tw-passagedata pid="2" name="What&#39;s all the commotion?" tags="" position="200,0" size="100,100">Nina hurries back and forth across the room, waking the dust and unused cosmetic pastes from their slumber in the depths of your desk before burying herself in your closet. 
 
 She mutters disappointedly to herself as she throws used tunics on a pile.
 
@@ -24,10 +24,10 @@ She mutters disappointedly to herself as she throws used tunics on a pile.
 
 You part your mouth to respond but Nina has already moved on to the next topic.
 
-&quot;I can&#39;t believe you forgot already. The cultural festival, Seraphina. It&#39;s today.&quot;
+&quot;I can&#39;t believe you forgot already. The festival, Seraphina. It&#39;s today.&quot;
 
 [[It can&#39;t be!]]
-[[Oh.]]</tw-passagedata><tw-passagedata pid="3" name="It can&#39;t be!" tags="" position="200,150" size="100,100">Nina turns as she hears this. You can feel her look you up and down, brows furrowed with concern. She takes herself away from the closet and moves to place her hand on your forehead. 
+(link: &quot;Oh.&quot;)[(goto: &quot;It can&#39;t be!&quot;)It can&#39;t be!]</tw-passagedata><tw-passagedata pid="3" name="It can&#39;t be!" tags="" position="200,150" size="100,100">Nina turns as she hears this. You can feel her look you up and down, brows furrowed with concern. She takes herself away from the closet and moves to place her hand on your forehead. 
 
 &quot;Are you feeling okay? It&#39;s not like you to forget the festival.&quot;
 
@@ -73,11 +73,11 @@ You respond, &quot;I was in the barns yesterday.&quot;
 
 [[Take a bath]]
 [[Don&#39;t take a bath]]
-</tw-passagedata><tw-passagedata pid="7" name="Take a bath" tags="" position="200,500" size="100,100">&quot;I&#39;ll take a bath I promise. Please just give me the morning to get ready? I&#39;m too tired to be out and about.&quot;
+</tw-passagedata><tw-passagedata pid="7" name="Take a bath" tags="" position="200,500" size="100,100">(set:$bath to true)&quot;I&#39;ll take a bath I promise. Please just give me the morning to get ready? I&#39;m too tired to be out and about.&quot;
 
 Nina hesitates and then gives in. 
 
-&quot;Fine, I&#39;ll start drawing the bath for you. But you better get in quick or itll get cold! And I&#39;m leaving your festival outfits on the bed. Make sure that you are ready by noon or your mother will have something to say. This is a big day for your family.&quot;
+&quot;Fine, I&#39;ll start drawing the bath for you. But you better get in quick or it&#39;ll get cold! And I&#39;m leaving your festival outfits on the bed. Make sure that you are ready by noon or your mother will have something to say. This is a big day for your family.&quot;
 
 &quot;I know.&quot;
 
@@ -86,13 +86,13 @@ Nina hesitates and then gives in.
 You and Nina share a look. She may be over protective and motherly and abrasive at times, but you know that deep down she really just wants what&#39;s best for you. If there&#39;s anyone in this castle who knows what you want, it&#39;s Nina.
 
 [[I know Nina. Thank you.]]
-[[I don&#39;t need your advice.]]</tw-passagedata><tw-passagedata pid="8" name="Don&#39;t take a bath" tags="" position="500,500" size="100,100">&lt;em&gt;You lie to Nina&lt;/em&gt;
+[[I don&#39;t need your advice.]]</tw-passagedata><tw-passagedata pid="8" name="Don&#39;t take a bath" tags="" position="500,500" size="100,100">(set:$bath to false)&lt;em&gt;You lie to Nina&lt;/em&gt;
 
 &quot;I&#39;ll take a bath I promise. Please just give me the morning to get ready? I&#39;m too tired to be out and about.&quot;
 
 Nina hesitates and then gives in. 
 
-&quot;Fine, I&#39;ll start drawing the bath for you. But you better get in quick or itll get cold! And I&#39;m leaving your festival outfits on the bed. Make sure that you are ready by noon or your mother will have something to say. This is a big day for your family.&quot;
+&quot;Fine, I&#39;ll start drawing the bath for you. But you better get in quick or it&#39;ll get cold! And I&#39;m leaving your festival outfits on the bed. Make sure that you are ready by noon or your mother will have something to say. This is a big day for your family.&quot;
 
 &quot;I know.&quot;
 
@@ -100,8 +100,8 @@ Nina hesitates and then gives in.
 
 You and Nina share a look. She may be over protective and motherly and abrasive at times, but you know that deep down she really just wants what&#39;s best for you. If there&#39;s anyone in this castle who knows what you want, it&#39;s Nina.
 
-[[Thank you, Nina. I know]]
-[[I don&#39;t need your advice, Nina.]]</tw-passagedata><tw-passagedata pid="9" name="I know Nina. Thank you." tags="" position="100,700" size="100,100">Nina smiles at you. 
+[[I know Nina. Thank you.]]
+[[I don&#39;t need your advice.]]</tw-passagedata><tw-passagedata pid="9" name="I know Nina. Thank you." tags="" position="100,700" size="100,100">Nina smiles at you. 
 
 &quot;See you out there.&quot;
 
@@ -111,14 +111,625 @@ As she closes the door you can hear her shout,
 
 You wait for her heels to click down the hallway before you ease your way out of bed. 
 
+As the silence settles over the room, your thoughts become more clear. Nina isn&#39;t wrong. As one of Skotadi&#39;s strongest Dei weilders, you know that your family depends on you to live up to the crest. You have to show the whole city just how powerful you are today. That you are worthy of your name.
+
+You are Seraphina Vera Feniks. The only heir of the worlds most powerful firebreathing family. 
+
+Today could change the rest of your life for good.
+
 What do you do first?
 
-[[Take bath (it might not be ready yet)]]
-[[Stretch (it&#39;s good for you)]]
-[[Attempt to fall back asleep... again]]
+(if: $bath is true)[(link: &quot;Take Bath&quot;)[(goto: &quot;Take Bath&quot;)Take Bath]](else:)[]
+[[Train]]
 [[Look out the Window]]
+[[Attempt to fall back asleep... again]] 
 
-(Link:Attempt to fall back asleep)</tw-passagedata><tw-passagedata pid="10" name="I don&#39;t need your advice." tags="" position="300,700" size="100,100"></tw-passagedata><tw-passagedata pid="11" name="I don&#39;t need your advice, Nina." tags="" position="500,700" size="100,100"></tw-passagedata><tw-passagedata pid="12" name="Thank you, Nina. I know" tags="" position="700,700" size="100,100"></tw-passagedata><tw-passagedata pid="13" name="Take bath (it might not be ready yet)" tags="" position="150,900" size="100,100"></tw-passagedata><tw-passagedata pid="14" name="Stretch (it&#39;s good for you)" tags="" position="300,925" size="100,100"></tw-passagedata><tw-passagedata pid="15" name="Attempt to fall back asleep... again" tags="" position="0,900" size="100,100"></tw-passagedata><tw-passagedata pid="16" name="Look out the Window" tags="" position="150,1100" size="100,100"></tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="10" name="I don&#39;t need your advice." tags="" position="300,700" size="100,100">Nina sighs and gently pushes the door open.
+
+&quot;I just want you to remember that you aren&#39;t alone in this.&quot;
+
+She smiles at you sadly and then bows before exiting the room. 
+
+&quot;Don&#39;t forget to practice a little bit before you perform.&quot;
+
+Her heels click down the hallway, leaving you alone with your thoughts. She&#39;s not wrong. As one of Skotadi&#39;s strongest Dei weilders, you know that your family depends on you to live up to the crest. You have to show the whole city just how powerful you are today. That you are worthy of your name.
+
+You are Seraphina Vera Feniks. The only heir of the worlds most powerful firebreathing family. 
+
+Today could change the rest of your life for good.
+
+What do you do first?
+
+(if: $bath is true)[(link: &quot;Take Bath&quot;)[(goto: &quot;Take Bath&quot;)Take Bath]](else:)[]
+[[Train]]
+[[Look out the Window]] 
+[[Attempt to fall back asleep... again]] </tw-passagedata><tw-passagedata pid="11" name="Attempt to fall back asleep... again" tags="" position="0,900" size="100,100">This really isn&#39;t a good idea.
+
+
+
+
+(link: &quot;Attempt to sleep&quot;)[(goto:&quot;No, I want to sleep&quot;)No, I want to sleep)
+(link:&quot;Go Back&quot;)[(goto:&quot;I know Nina. Thank you.&quot;)I know Nina. Thank you.]</tw-passagedata><tw-passagedata pid="12" name="Look out the Window" tags="" position="600,900" size="100,100">(if: $secret is true)[Nina removes her hand from your head, she still looks incredibly worried, if not moreso than when you remember closing your eyes. 
+
+You shoo her away and all of Nina&#39;s concern fades as she realizes you were only attempting to fall back asleep again. 
+
+&quot;Not on my watch!&quot; Nina takes the covers with her as she begins to leave, cursing with the old Trodstich words native to her tongue, &quot;Unbelievable&quot;]
+
+You sit up and look to the window. The sun is only just peeking over the wall with the same early morning rays. Children run and play below, dancing with flags and gerikos while their mothers try to herd them back inside so they can officially be dressed for the day. 
+
+Street vendors are set up their carts, stacked full with the newest trinkets, glider racing cards, sweet carmel ball of suraket, and beautiful gilden kokoshniks for the young women preparing to marry. The wood for the bonfire already stacked in the middle of the town square.
+
+Sweeping sounds of the bells play as the hustle and bustle of the day begins. The air is sweet, crisp, and cold, just like the beginning of a spring day in Skotadi. In the next few days, we will land on Kelanei and the trials will begin. 
+
+(if: $secret is true)[&lt;em&gt;It&#39;s not too late to stop the massacre.&lt;/em&gt;]
+
+There is much to do. 
+
+(link:&quot;back to the room&quot;)[(goto: &quot;I don&#39;t need your advice p2&quot;)I don&#39;t need your advice p2]</tw-passagedata><tw-passagedata pid="13" name="Take Bath" tags="" position="200,900" size="100,100">(set: $clean to true)You turn down the hall and find the bath steaming and ready.
+
+Nina was nice enough to add waterlily petals to the water. Your favorite. You dip your legs into the wood basin, easing yourself into the water as the heat seeps into your body. Nina was right, you smelled terrible. Thank goodness you decided to take bath and remove all of the dust and grime from the day before. 
+
+You trained very hard yesterday. The weight of your muscles finally comes to the surface as the warm water massages them to the bone. You&#39;ve been like this every day since the end of last years festival. A never ending source of training. Keeping your muscle strong. Strong enough that you can take anyone, even if your fire breathing fails you.
+
+It got to a point that not even your Elk Owl could keep up. That&#39;s why you were in the barns yesterday. Her soft knees were busted when she collapsed from exhaustion. You were frustrated, almost mad that she couldn&#39;t keep up. But you are not cruel. You had to treat her wounds yesterday, and finally realize that maybe you were going too far. 
+
+&lt;em&gt;You now smell of waterlillies&lt;/em&gt;
+
+(link:&quot;back to the room&quot;)[(goto: &quot;I don&#39;t need your advice p2&quot;)I don&#39;t need your advice p2]</tw-passagedata><tw-passagedata pid="14" name="Train" tags="" position="400,900" size="100,100">(set: $warmedup to true)What you need is more training. Your pull your hair into a curly mess and walk down to the training courts. 
+
+The stone floors are covered with hay and worn smooth with use. Sortches cover the targets behind you. The pavillion overlooks the entire city as more and more people wake to ready themselves for the festivities. Children laugh, warm breath making small puffs in the air, the other crests are awake as well. You can see a young boy already in his Kaftan for the festival. He is too young to worry about a performance yet. He won&#39;t be presented for the next five years. 
+
+The sun is getting closer to noon. You practice your moves diligently, warming your body up again. 
+
+Stage fright will have nothing on you. You tell yoursellf this over and over again. 
+
+(link:&quot;back to the room&quot;)[(goto: &quot;I don&#39;t need your advice p3&quot;)I don&#39;t need your advice p3]</tw-passagedata><tw-passagedata pid="15" name="No, I want to sleep" tags="" position="0,1025" size="100,100">The consequences for this could ruin your life. It is incredibly reccomended that you don&#39;t do this.
+
+
+
+[[Attempt to sleep]]
+(link:&quot;Go Back&quot;)[(goto:&quot;I know Nina. Thank you.&quot;)I know Nina. Thank you.]</tw-passagedata><tw-passagedata pid="16" name="Attempt to sleep" tags="" position="0,1150" size="100,100">I cannot emphasize enough how bad of an idea this is for you. Are you absolutely sure that you want to sleep more? It&#39;s already 9:00AM! You have to be ready to perform by noon...
+
+
+
+(link:&quot;Attempt to sleep&quot;)[(goto:&quot;Sleeping officially2&quot;)Sleeping officially2]
+(link:&quot;Go Back&quot;)[(goto:&quot;I know Nina. Thank you.&quot;)I know Nina. Thank you.]</tw-passagedata><tw-passagedata pid="17" name="Sleeping officially" tags="" position="0,1275" size="100,100">You slide back into bed and fall alseep. 
+
+Everything is so peaceful a warm. Your blankets are light and soft. Your mattress envelopes you with it&#39;s fluffiness. There is nothing that could possibly feel better. As you drift off you feel completely content.
+
+
+[[Zzz...]] </tw-passagedata><tw-passagedata pid="18" name="Zzz..." tags="" position="0,1400" size="100,100">You are rudely awoken when your door bangs open. 
+
+Golden light now streams through your window from the sunset setting off embers of dust particles like fireflies through the air. You don&#39;t have a chance to enjoy it because when you look up, you can see that your mother is not happy at all. 
+
+&quot;Feeling better after your long rest?&quot;
+
+Mother&#39;s sweet voice doesn&#39;t match her seething demeanor. Her mouth contorts with disgust. 
+
+&quot;Pathetic. Just when you promised us that you were going to do better.&quot; she spits, &quot;I knew you were nothing but a coward.&quot;
+
+&quot;Mom-&quot;
+
+&quot;You do not get the privledge of calling me that. Just to save our name we have to sacrifice you. Thank the Exosians that at least you aren&#39;t our problem anymore.&quot;
+
+The weight of her words hit you like a truck. 
+
+&quot;Sacrifice?&quot;
+
+Your mother sucks in a deep breath. &quot;You have two choices. You can either sacrifice yourself for our name and burn for the Exosians, or we can sell you to Alriyah. You aren&#39;t they&#39;re normal type for the trade but they need more Culturas anyways. Either way, you are stripped of the Feriks title for life.&quot;
+
+[[burn alive]]
+[[sold to the slave trade]]</tw-passagedata><tw-passagedata pid="19" name="burn alive" tags="" position="0,1525" size="100,100">You choose to burn alive. 
+
+In order to spare you the graphic details, all we can say is that you passed away. At least you will sleep for eternity now
+
+[[END]]</tw-passagedata><tw-passagedata pid="20" name="sold to the slave trade" tags="" position="125,1525" size="100,100">You are taken at dusk with some shaded men to cross onto the Alriyah transport. 
+
+After only a few months of working you pass away from the sheer abuse that enslavers put you through. At least now you can sleep for eternity.
+
+[[END]]</tw-passagedata><tw-passagedata pid="21" name="END" tags="" position="0,1650" size="100,100">The End
+
+(link:&quot;Try Again?&quot;)[(goto:&quot;The Beginning&quot;)The Beginning]</tw-passagedata><tw-passagedata pid="22" name="Sleeping officially2" tags="" position="125,1275" size="100,100">Are you absolutely sure that you want to do this? It is not going to go anywhere good. At all. I can&#39;t tell you the exact consequences but like, dude, they&#39;re BAD. Please, please, please reconsider?? Please?? I really think this isn&#39;t a good way to go. I&#39;ll even give you a pass to a secret ending if you choose not to do this!
+
+
+
+[[Okay, I&#39;ll take the secret ending]]
+(link:&quot;Attempt to sleep&quot;)[(goto:&quot;Sleeping officially&quot;)Sleeping officially]
+</tw-passagedata><tw-passagedata pid="23" name="Okay, I&#39;ll take the secret ending" tags="" position="700,0" size="100,100">(set:$secret to true) Time warbles in front of you, it&#39;s almost tangible, the air around swrils with the secret inputs and outputs. The patterns of the universe. The sensations of an entire existence at your finger tips. 
+
+You have been reborn into a the same world, but perhaps you do not belong here. Maybe it&#39;s time that you change things.
+
+&lt;em&gt;You have unlocked the Exosians Will&lt;/em&gt;
+
+(link: &quot;Okay...&quot;)[(goto: &quot;Look out the Window&quot;)Look out the Window]</tw-passagedata><tw-passagedata pid="24" name="I don&#39;t need your advice p2" tags="" position="200,1000" size="100,100">You are Seraphina Vera Feniks. The only heir of the worlds most powerful firebreathing family. 
+
+You are back in your room. What you do today could change the rest of your life for good.
+
+What do you do next?
+
+[[Train]]
+[[Look out the Window]] 
+[[Look at your outfit choices]]</tw-passagedata><tw-passagedata pid="25" name="Look at your outfit choices" tags="" position="400,1200" size="100,100">With not much time left before your performance, you must go back to the room in order to pick the proper outfit to represent your family. 
+
+You know that Nina would never do you wrong with her choices. She chose outfits that she knew you would like but that your family would appreciate. Always one to compromise.
+
+(if: $secret is true)[You&#39;ve been here before, but there&#39;s something you didn&#39;t consider. You go back into your closet to find a dress that Nina didn&#39;t put out for you nor that you remember ever being in your closet. Golden threads stream out the sleeves like flowing water. It&#39;s the most immaculate thing you&#39;ve ever laid your eyes on.]
+
+[[Red]]
+[[Green]]
+[[Gold]]
+(if: $secret is true)[(link:&quot;The Exosian Dress&quot;)[(goto: &quot;New&quot;)New]]</tw-passagedata><tw-passagedata pid="26" name="I don&#39;t need your advice p3" tags="" position="400,1000" size="100,100">You are Seraphina Vera Feniks. The only heir of the worlds most powerful firebreathing family. 
+
+You are back in your room. What you do today could change the rest of your life for good.
+
+What do you do next?
+
+[[Look at your outfit choices]]</tw-passagedata><tw-passagedata pid="27" name="Red" tags="" position="500,1400" size="100,100">The red fabric sways around you, almost like a mulaweian toga. Your legs feel free, your arms exposed. You know your father will appreciate the gaudiness of this outfit.
+
+With a deep breath, you head out to the festival. 
+
+Your parents are sitting in their proper thrones centeral to the other 5 crests all surrounding the bonfire. A crowd has begun to form around the arena. People pull out their betting cards while parents pull their children up on their shoulders. 
+
+You walk confidently to your seat on the pedestals, just barley below your parent&#39;s. The other families watch you warily as you walk in. Some look hungry, others envious, some simply watching. It&#39;s a big day for all of the crests.
+
+(if: $clean is true)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. She nods her approval as you make eyecontact with her. 
+
+&quot;I was worried I&#39;d see you covered in dirt&quot; She whispers to you. You aren&#39;t quite sure if she&#39;s teasing.](else:)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. Her face contorts the closer you get as she realizes you didn&#39;t wash the grime from your face and body. 
+
+&quot;Today? Of all days not the bathe, Seraphina? You know better than that. We&#39;re going to be the laughing stock of the day.&quot;]
+
+The horns blare to start the ritual.
+
+[[The ritual begins]]
+</tw-passagedata><tw-passagedata pid="28" name="Green" tags="" position="300,1400" size="100,100">You decide to wear the the green one Nina laid out for you. Perfect for movement with its sage pants and slimfitting Rubhaka. The trim has your crest woven up the sides to your shoulders.
+
+
+With a deep breath, you head out to the festival. 
+
+Your parents are sitting in their proper thrones centeral to the other 5 crests all surrounding the bonfire. A crowd has begun to form around the arena. People pull out their betting cards while parents pull their children up on their shoulders. 
+
+You walk confidently to your seat on the pedestals, just barley below your parent&#39;s. The other families watch you warily as you walk in. Some look hungry, others envious, some simply watching. It&#39;s a big day for all of the crests.
+
+(if: $clean is true)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. She nods her approval as you make eyecontact with her. 
+
+&quot;I was worried I&#39;d see you covered in dirt&quot; She whispers to you. You aren&#39;t quite sure if she&#39;s teasing.](else:)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. Her face contorts the closer you get as she realizes you didn&#39;t wash the grime from your face and body. 
+
+&quot;Today? Of all days not the bathe, Seraphina? You know better than that. We&#39;re going to be the laughing stock of the day.&quot;]
+
+The horns blare to start the ritual.
+
+[[The ritual begins]]
+</tw-passagedata><tw-passagedata pid="29" name="Gold" tags="" position="700,1400" size="100,100">The strongest of your family colors, the gold shines in the early afternoon light sending lights across the room ceiling. The fabric is more still than you&#39;d like, but you know this is exactly what your parents would want you to wear on an occasion like this. With your training, it shouldn&#39;t be a problem. 
+
+With a deep breath, you head out to the festival. 
+
+Your parents are sitting in their proper thrones centeral to the other 5 crests all surrounding the bonfire. A crowd has begun to form around the arena. People pull out their betting cards while parents pull their children up on their shoulders. 
+
+You walk confidently to your seat on the pedestals, just barley below your parent&#39;s. The other families watch you warily as you walk in. Some look hungry, others envious, some simply watching. It&#39;s a big day for all of the crests.
+
+(if: $clean is true)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. She nods her approval as you make eyecontact with her. 
+
+&quot;I was worried I&#39;d see you covered in dirt&quot; She whispers to you. You aren&#39;t quite sure if she&#39;s teasing.](else:)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. Her face contorts the closer you get as she realizes you didn&#39;t wash the grime from your face and body. 
+
+&quot;Today? Of all days not the bathe, Seraphina? You know better than that. We&#39;re going to be the laughing stock of the day.&quot;]
+
+The horns blare to start the ritual.
+
+[[The ritual begins]]
+</tw-passagedata><tw-passagedata pid="30" name="The ritual begins" tags="" position="600,1600" size="100,100">The children of the crests begin sparring. 
+
+The flame burners to the fire holders. None of them even come close to your level of skill. However, the audience still coos their enjoyment when the drama turns or the tricks outdo themselves from the year prior. 
+
+As your performance time comes closer and closer you see a shadowy figure make their way to the first of the thrones on the right. 
+
+No one else seems to notice but you. Your turn is up next, but this person looks like they&#39;re up to no good.
+
+[[Stay Still]]
+[[Check it out]]
+(if: $secret is true)[(link: &quot;Bring your light to life&quot;)[(goto: &quot;Set your heart ablaze&quot;)Set your heart ablaze]]</tw-passagedata><tw-passagedata pid="31" name="New" tags="" position="900,1400" size="100,100">As your put on the dress that must&#39;ve beem gifted from the gods, you realize is shapes itself to your body. You feel stronger, lighter, more awake. The gold of the sleeves begins to wind its way up your body to form a familial crest on your shoulder. 
+
+With a deep breath, you head out to the festival. 
+
+Your parents are sitting in their proper thrones centeral to the other 5 crests all surrounding the bonfire. A crowd has begun to form around the arena. People pull out their betting cards while parents pull their children up on their shoulders. 
+
+You walk confidently to your seat on the pedestals, just barley below your parent&#39;s. The other families watch you warily as you walk in. Some look hungry, others envious, some simply watching. It&#39;s a big day for all of the crests.
+
+(if: $clean is true)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. She nods her approval as you make eyecontact with her. 
+
+&quot;I was worried I&#39;d see you covered in dirt&quot; She whispers to you. You aren&#39;t quite sure if she&#39;s teasing.](else:)[Your mother looks you up and down. Her form just as imposing as ever. clear muscular arms arcing out from her green, red, and gold pelt. Her face contorts the closer you get as she realizes you didn&#39;t wash the grime from your face and body. 
+
+&quot;Today? Of all days not the bathe, Seraphina? You know better than that. We&#39;re going to be the laughing stock of the day.&quot;]
+
+The horns blare to start the ritual.
+
+[[The ritual begins]]
+</tw-passagedata><tw-passagedata pid="32" name="Stay Still" tags="" position="400,1700" size="100,100">You hold your tongue, keeping an eye on the shadowy figure as they make their way down the thrones.
+
+Now on high alert, you begin to look for the other thrones, you realize that the isn&#39;t just one shadowy figure, but one shadowy figure at each throne. 
+
+This is not good. You are about to say something when you realize your parents are looking at you expectantly.
+
+It is your turn, and your opponent is waiting.
+
+[[Say something about the mysterious figures]]
+</tw-passagedata><tw-passagedata pid="33" name="Check it out" tags="" position="800,1700" size="100,100">&lt;em&gt;I have enough time&lt;/em&gt;
+
+You think to yourself, as you sneak out of your seat. Your mother glares at you but you brush her off as you go towards the hidden figure at the throne closest to you. 
+
+There isn&#39;t one at your family&#39;s throne.
+
+&lt;em&gt;odd&lt;/em&gt;
+
+You make your way to the first figure. They turn to look but you grab their hands and bind them, stripping off their mask and covering their mouth. They struggle but it&#39;s futile.
+
+[[Who are you?]]
+[[What are you doing?]]</tw-passagedata><tw-passagedata pid="34" name="Say something about the mysterious figures" tags="" position="300,1900" size="100,100">The figures have to be brought up. Everyone could be in danger. 
+
+Your mother&#39;s brow shoots up with concern. She, along with the other crests who heard you all begin to look around, but there are no figures to be found. 
+
+Your mother does not look pleased, she pushes you into the arena.
+
+&quot;No cowardice. You must fight.&quot;
+
+As you turn around to protest you see the unsheathing of a blade. It all happens too fast. 
+
+Ribbons of blood shoot out of your opponent&#39;s neck and all of the other thrones. The audience begins to scream as the masked figures dart out from behind the fences. There&#39;s hundreds of them. Each moving faster than should be humanly possible and shrouding their faces in masks. 
+
+Bystanders start scrambling, trampling over each other as they attempt to escape. Children are crying. Blood pools over the ancient symbols of the crests embeded into the stone. the masked figures have effectively killed every heir to the crest. Every heir except for you. The adults are in an uproar. Some parents hold their dead children to their chest.
+
+(if: $warmedup is true)[You recgonize the boy you saw earlier while training. A pang hits you in the chest harder than you thought.]
+
+&quot;Seraphina!&quot; Your mother calls out to you. She does not look scared, only angry, &quot;Run! they only want the kids!&quot;
+
+[[Run]]
+[[Fight]] </tw-passagedata><tw-passagedata pid="35" name="Set your heart ablaze" tags="" position="1025,1700" size="100,100">You immediately feel the threat of danger as the figures move. There&#39;s no other option other than to blaze. 
+
+&quot;I&#39;m sorry, Mother&quot; you say quickly. She arches an eyebrow at you only seconds before you illuminate the entire arena. The dress weaves itself into your skin, meshing, glowing, and empowering your senses. 
+
+You feel fantastic. You feel better than you ever thought you could feel.
+
+The Figures are all suddenly exposed, just like target practice.
+
+Your crest is a dragon for a reason. You feel the fire of your ancestory light within you and pillar out of your mouth like a beam of pure destruction. All of the figures melt on site, with nothing to do but burn.
+
+As you come back to your senses, the rest of the crests stare at you shocked. 
+
+&quot;She is one of them&quot; they whisper, to each other. Some in awe. Some in shock. Many not knowing how to understand what they just saw. Your mother raises your hand, then crouching to one knee, head bowed.
+
+&quot;Bow&quot; she barks to the other crests, &quot;for we have an Exosian in our presence.&quot;
+
+You stare as the crowd all beings to lower their heads out of respect. No, out of worship. To them, you are a god.
+
+[[END]]</tw-passagedata><tw-passagedata pid="36" name="Run" tags="" position="100,2100" size="100,100">You heed your mother&#39;s words, running through people as fast as you possible can.
+
+They are grabbing at you as you try to escape. The figures wait at a distance, not yet striking. Once you finally break free you have an option. The forest lies to your left. It&#39;s dark, winding, dangerous, but it just might draw the figures away from your family and the general public.
+
+on the other side is the castle, where you might be able to take your Elk Owl and escape. 
+
+[[Turn into the forest]]
+[[Go to the castle]]</tw-passagedata><tw-passagedata pid="37" name="Fight" tags="" position="400,2100" size="100,100">You feel power within you as you turn to face the masked figures.
+
+They advance on you slowly, watching your every move, blocking off your options. You trained for this, don&#39;t forget.
+
+The fire burns within you, and you let it erupt from you mouth, eyes, fingertips, toes. Your body is ablaze as you take on your attackers. They burn from the inside out, turning to singed skeletons within minutes. They scream and run and fall off the pavilion. 
+
+This is good. You are winning.
+
+But there are too many of them. 
+
+They come all at the same time, a swarm of insects all going for the kill.
+
+(if: $warmedup is true)[Good thing you&#39;re already warmed up, you dodge, strike, blaze, melt. If they can touch you they can burn. Every enemy crashes and tumbles, by the time your effort ends, hundreds of body surround you. You body is exhausted, sweaty, warm to the touch. You over exerted yourself, but you have won. You turn to look at the rest of the surviving crests.
+
+You are the only surviving heir. 
+
+You mother and four other adults are the only crest survivors.
+
+But, you lived.
+
+Thank the Exosians you trained first.](else:)[You can&#39;t keep up. A slash cuts your cheek. your eye. you feel a blade enter your thigh and the finally your heart. 
+
+The flame dies out around you as you collapse. 
+
+Maybe things could&#39;ve been different...]
+
+[[END]]</tw-passagedata><tw-passagedata pid="38" name="Turn into the forest" tags="" position="0,2275" size="100,100">You enter the forest, crashing past trees and over the ferns. 
+
+The public and family&#39;s safety come first. You must get your attackers away from the innocent. 
+
+At full speed you streak through the forest, the light of the fire at your feet, breathing within you. 
+
+Oddly enough, you don&#39;t hear any footsteps behind you. You turn and see that you are not being followed, in fact, no one is there at all. This isn&#39;t right. You turn to head back when a sound suddenly appears behind you. You attempt to turn but it&#39;s too late, a pain shatters across your skull and then... nothing.
+
+When you awake, you are in shackles. The figures still wear their masks. They do not speak to you. 
+
+Maybe if you had done things differently, you would&#39;ve been able to escape.
+
+[[END]]</tw-passagedata><tw-passagedata pid="39" name="Go to the castle" tags="" position="225,2275" size="100,100">You turn towards the castle, bolting to the barnyard.
+
+Your Elk Owl lies on her knees. They are bandaged, severly bleeding through the wraps. She doesn&#39;t look too good. It&#39;s ovbious that she needs rest. You hear their footsteps follow you. 
+
+[[Ride her anyway]]
+[[Hide]]</tw-passagedata><tw-passagedata pid="40" name="Ride her anyway" tags="" position="125,2400" size="100,100">You pull your Elk Owl up, gently brushing her feathers and cooing reasurrance.
+
+She stands for you, however weak she may be. 
+
+You saddle her but she almost collapses under the weight. 
+
+&quot;Easy girl I know you&#39;re in pain,&quot; you rub her neck and then put your nose to hers. It&#39;s soft and velvety,&quot;Can you do this for me?&quot;
+
+She blinks at you slowly, and with a breath, you attempt to mount her. She stumbles but does not fall. You give the command to run and she takes off as best as she can. 
+
+You somehow manage to escape.
+
+[[Epilogue]]</tw-passagedata><tw-passagedata pid="41" name="Hide" tags="" position="375,2400" size="100,100">The figures reach your location. You hold your breath silent in the celing wood planks of her stall. They reach your Elk Owl. 
+
+(if:$clean is true)[They raise their noses to the air, waiting for your scent to catch the breeze. Fear flashes in your mind as you know the scent of waterlilies does not belong in a barn. A masked face snaps in your direction. They stalk towards you, piercing, deliberate footsteps. They look up and slowly point. Before you can react a spears lunges through your gut.
+
+They stand over you as you bleed out in the stall. You die slowly and painfully](else:)[They raise their noses to the air, waiting for your scent to catch the breeze. Thank goodness you still smell like a barnyard from last night. The faces are not able to detect you, but that doesn&#39;t stop them from looking at your Owl Elk. 
+
+You see them raise their blades and slash down on her. She was only strong enough to let out a whimper before her eyes glaze over. The figures watch her die, emotionless, and then walk away. 
+
+You wait until they leave before throwing yourself over her body, sobbing.
+
+At least you survived.]
+
+[[END]]</tw-passagedata><tw-passagedata pid="42" name="Epilogue" tags="" position="125,2525" size="100,100">Five years later, you find yourself wandering the markets of Mulawei. 
+
+Your new name is Claudia, you now work for the Mulawei Secret Service as a double agent. You finally tracked down the beginning of the attack on your family. And it all started in the Secret Service in Mulawei. You are the last of the Feriks Family crest.
+
+You will get revenge on those you killed your kin.
+
+[[END]]</tw-passagedata><tw-passagedata pid="43" name="Who are you?" tags="" position="700,1900" size="100,100">You hold their hands as you flip them around. 
+
+It&#39;s a young boy, and he looks scared out of his mind. 
+
+&quot;Who are you?&quot;
+
+The boy&#39;s mouth stays shut. Eyes wide in fear.
+
+&quot;I said, who are you?&quot;
+
+You try again more forcefully. The boy flinches, voice quivering. 
+
+&quot;Please, my lady, I&#39;m not allowed to-&quot;
+
+&quot;Who. Are. You.&quot;
+
+The boy stares at her, &quot;We were hired by your family, my lady.&quot;
+
+&quot;What?&quot;
+
+The boy shrinks under your gaze, &quot;I am not allowed to tell you more than that my lady.&quot;
+
+You let the boy go and look around at the other figures. They are behind each throne except your parents.
+
+Each throne.
+
+You understand immediately. They are going to take control.
+
+&quot;Which ones are you after?&quot;
+
+The boy doesn&#39;t seem to understand.
+
+[[Bribe Him]]
+[[Threaten]]</tw-passagedata><tw-passagedata pid="44" name="What are you doing?" tags="" position="900,1900" size="100,100">You hold their hands as you flip them around. 
+
+It&#39;s a young boy, and he looks scared out of his mind. 
+
+&quot;What are you doing?&quot;
+
+The boy&#39;s mouth stays shut. Eyes wide in fear.
+
+&quot;I said, what are you doing?&quot;
+
+You try again more forcefully. The boy flinches, voice quivering. 
+
+&quot;Please, my lady, I&#39;m not allowed to-&quot;
+
+&quot;What. Are. You. Doing.&quot;
+
+The boy stares at her, &quot;We were hired by your family, my lady.&quot;
+
+&quot;What?&quot;
+
+The boy stares at you and is about to speak when the horns blare a warning. You are late to battle your opponent. 
+
+&quot;Just tell me what they want.&quot;
+
+The boy hesitates before responding.
+
+&quot;The heirs.&quot;
+
+The notion suddenly makes sense. They want to kill all of the heirs. Possibly even including yourself. They want control. Complete control. That is so like mother. 
+
+This situation is going to be incredibly difficut to navigate.
+
+[[Kill Mom]]
+</tw-passagedata><tw-passagedata pid="45" name="Threaten" tags="" position="800,2100" size="100,100">&quot;I am not afraid to kill you&quot;
+
+The boy stares at you and is about to speak when the horns blare a warning. You are late to battle your opponent. The boy does not respond. He is petrified in fear. You take his knife and slice is throat .
+
+His squeal is loud enough to alert the throne you are behind.
+
+&quot;What are you doing?&quot; The family comes out from behind the throne and the blood drains from their face as they take in the scene in front of them. blood pools at your feet.
+
+&quot;Guards, arrest her!&quot; guards come to capture you.
+
+&quot;No wait!&quot; you shout at them desperately, &quot;You don&#39;t understand, you&#39;re in danger.&quot;
+
+Your struggle against the guards is useless. They knock you out.
+
+You wake up in a cell. The city is on fire. You are told that all of the crests, except for your family, has died. The prison guard says you are allowed one visitor.
+
+[[Ask For Mom]]
+[[Ask For Nina]]</tw-passagedata><tw-passagedata pid="46" name="Bribe Him" tags="" position="600,2100" size="100,100">&quot;I will pay off your entire group. You will not be harmed I&#39;ll be sure of it.&quot;
+
+The boy stares at you and is about to speak when the horns blare a warning. You are late to battle your opponent. 
+
+&quot;Just tell me who they want.&quot;
+
+The boy hesitates before responding.
+
+&quot;The heirs.&quot;
+
+The notion suddenly makes sense. They want to kill all of the heirs. Possibly even including yourself. They want control. Complete control. That is so like mother. 
+
+This situation is going to be incredibly difficut to navigate.
+
+[[Kill Mom]]
+</tw-passagedata><tw-passagedata pid="47" name="Kill Mom" tags="" position="500,2300" size="100,100">&quot;Where are you going?&quot;
+
+The boy whispers to you, but you ignore him. You snatch the blade from his sheath, intent on heading towards your mother&#39;s throne. 
+
+&quot;No!&quot; but it&#39;s too late, you reach from arround the throne. Blood drips from your mother&#39;s throat and she falls foreward. The betrayal in her eyes is apparant, but its still not as strong as her anger.
+
+Your father stands, shocked. 
+
+&quot;Seraphina, what have you done?&quot;
+
+The other crests are all standing now, surrounding you carefully. Cautiously. You look back at the boy behind the throne. The rest of the assassins are slowly encroaching on the crests.
+
+[[Let the crests die]]
+[[Warn the crests]]</tw-passagedata><tw-passagedata pid="48" name="Ask For Mom" tags="" position="700,2300" size="100,100">You watch the sun cross the sky, unable to tell exactly how much time has passed. Less thank a day. More than several hours?
+
+However long it&#39;s been, you can feel the Dei has been drained from your body. It&#39;s unattainable . 
+
+Heels click down the hallway. 
+
+&lt;em&gt; Mother&lt;/em&gt;
+
+You turn and face the bars. Your mother looms over you, imposing as always. You don&#39;t really know what to say. Luckily, she speaks for you.
+
+&quot;You should&#39;ve seen that coming my star&quot; 
+
+&quot;Why? Don&#39;t you have enough power?&quot;
+
+Your mom stares down at you. She doesn&#39;t respond.
+
+&quot;The kids mom? All of the kids? What, you wanted to kill me.&quot;
+
+&quot;Sometimes, you need to make a few sacrifices to thrive.&quot; Her words are cold. She looks you right in the eyes. 
+
+You flinch. Not that you expected much more from her.
+
+&quot;So, what&#39;s next for me?&quot;
+
+&quot;You will be burned for your crimes.&quot;
+
+&quot;What!&quot;
+
+&quot;You killed a child. It was not out of self defence. You die tomorrow at dawn.&quot;
+
+She leaves in a rush. The wind behind her cold and barren. empty. 
+
+What a way to die. 
+
+[[END]]
+
+</tw-passagedata><tw-passagedata pid="49" name="Ask For Nina" tags="" position="900,2300" size="100,100">Nina comes to see you as soon as possible.
+
+She crouches down to hold your hands, bring them close to her chest and whisper Trodstian prayers over the top. You lean your head against the bars and she brushes your hair back.
+
+&quot;Oh little lamb, you&#39;ve gotten yourself in a sticky situation this time haven&#39;t you&quot;
+
+You sigh.
+
+[[That&#39;s what is seems like]]</tw-passagedata><tw-passagedata pid="50" name="Let the crests die" tags="" position="500,2500" size="100,100">You never liked them anyways. Politics wasn&#39;t the life for you and your mom was the worst of all the crests. 
+
+&lt;em&gt;Maybe, its time for a change in power.&lt;/em&gt;
+
+You let the figures encroach on the adults. Distracting them with your presence. You bring your hands up in a surrender. 
+
+&quot;You all think I&#39;m pathetic?&quot;
+
+No one moves. 
+
+&quot;I hope you all die.&quot;
+
+Your father leaps on you. You dodge. The swarms of assassins release themselves on the crests. 
+
+&lt;em&gt;shit, they aren&#39;t going for just the parents&lt;/em&gt;
+
+[[save the kids]]
+[[let them die]]</tw-passagedata><tw-passagedata pid="51" name="Warn the crests" tags="" position="700,2500" size="100,100">You shout to the crests that they&#39;re in danger but it&#39;s too late. 
+
+They turn to start facing the figures but blades are already buried in their chests. Blood is everywhere. It coats the soles of feet and the bodies of loved ones. Chaos breaks out as the figures start attacking not just nobels but the bystanders. Its a bloodbath. You see the figures go for the children.
+
+[[save the kids]]
+[[let them die]]</tw-passagedata><tw-passagedata pid="52" name="save the kids" tags="" position="400,2700" size="100,100">You let your fire light up all of the adults in the surrounding area. The kids shrink back and start crying.
+
+They&#39;ll have more time to cry later. 
+
+You go from family to family, grabbing each child and placing them on your back or carrying them.
+
+&quot;You need to run!&quot;
+
+You shout at them. They look terrified. They look like they don&#39;t really trust you, but they don&#39;t have a choice. The figures set fire to the city, you get the children on palace Elks and set them off towards the forest.
+
+At least this way, they don&#39;t have to die. 
+
+As you turn back to see the outcome of your actions, you realize that you are now an orphan. The last of the Feniks. 
+
+You smile as the city burns.
+
+It was time this place changed.
+
+[[END]]</tw-passagedata><tw-passagedata pid="53" name="let them die" tags="" position="600,2700" size="100,100">The children are slaughtered instantly, the figures come for you next.
+
+You try to fight them off but the boy takes you by surprise. He may have trembeled when looking at you, but you undersestimated his stealth. 
+
+You feel the blade open your throat.
+
+You die.
+
+The figures take over the entire city. It is the city of nobels no more. 
+
+[[END]]</tw-passagedata><tw-passagedata pid="54" name="That&#39;s what is seems like" tags="" position="900,2425" size="100,100">&quot;I wish I could help you out of this one.&quot;
+
+&quot;What is she saying I did?&quot;
+
+Nina goes silent, a sad look in her eyes, &quot;that you murdered all those children&quot;
+
+You sigh and fall backwards, &quot;Yep, sounds like mom.&quot;
+
+Nina doesn&#39;t let go of your hand.
+
+&quot;there&#39;s no way you could break yourself out? You the most powerful Cultura in the entire city!&quot;
+
+&quot;They syphened my Dei.&quot;
+
+&quot;They can do that?&quot;
+
+You shrug. They can do anything they want to do, and you only know from experience. Except you never had that power taken away. It feels empty without your connection to the Exosians. You look back up at Nina. Her lips are pressed together tightly like she&#39;s struggling to hold back.
+
+[[What is it?]]
+
+</tw-passagedata><tw-passagedata pid="55" name="What is it?" tags="" position="900,2550" size="100,100">&quot;You&#39;re sentence&quot; her voice breaks.
+
+&lt;em&gt; Oh. &lt;/em&gt;
+
+That&#39;s right. The whole reason she invited Nina here is because Nina has to deliver her sentence. City laws.
+
+You sit at attention, waiting for the worst. Nina looks like like she&#39;s about to break When you feel her push something into your clasped hands. 
+
+You look at her, but she puts a finger to her lips, tears streaming down her face. 
+
+&quot;You are to be hung for your crimes. The central gates at noon tomorrow. The rest of the city will be there to watch and throw their stones at you.&quot; Nina wipes her tears and stands up.
+
+&lt;em&gt;May you go in peace.&lt;/em&gt;
+
+She says, giving you a knowing look. You look at your hands. In them lies a key.
+
+[[Escape]]</tw-passagedata><tw-passagedata pid="56" name="Escape" tags="" position="900,2675" size="100,100">You escape, running to the barns to find your Elk Owl.
+
+(if: $clean is true)[Her knees are bandaged but they look much better than when she collapsed a few days ago.]
+
+She chirps up at your entrace. You hush her and quickly get her saddled, turning back to write your final words as Seraphina Vera Feniks on the beam above the stall. It&#39;s a thank you to your mother lamb. 
+
+You know that mother won&#39;t get it, but that Nina will know exactly what you mean.
+
+[[END]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
